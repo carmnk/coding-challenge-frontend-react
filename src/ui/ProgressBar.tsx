@@ -54,7 +54,7 @@ export const ProgressBar = (props: ProgressBarProps) => {
     <ProgressBarContainer>
       <ProgressBarValue progress={progress} />
       <ProgressBarTargetMarker />
-      <TextTarget>{numberWithCommas(target, 0)} €</TextTarget>
+      <TextTarget title="current-target">{numberWithCommas(target, 0)} €</TextTarget>
     </ProgressBarContainer>
   );
 };

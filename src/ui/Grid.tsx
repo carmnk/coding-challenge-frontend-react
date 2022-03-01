@@ -27,7 +27,7 @@ const GridContainer = styled.div<{ minWidth?: React.CSSProperties["minWidth"] }>
   color: ${(props) => props.theme.color};
 `;
 
-const HeaderItem = styled.div`
+const HeaderRow = styled.div`
   text-transform: uppercase;
   font-family: ${(props) => props.theme.primaryFontFamily};
   font-size: 20px;
@@ -75,8 +75,8 @@ export const FlexGrid = (props: {
 
   return (
     <GridScrollableContainer minWidth={minWidth}>
-      <GridContainer minWidth={minWidth}>
-        <HeaderItem>Top 5 Products</HeaderItem>
+      <GridContainer minWidth={minWidth} title="grid">
+        <HeaderRow>Top 5 Products</HeaderRow>
         {data.map((row, rIdx) => {
           const cellContent = (
             <React.Fragment>

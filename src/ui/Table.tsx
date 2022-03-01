@@ -117,7 +117,7 @@ export const Table = (props: TableProps) => {
 
   return (
     <TableContainer maxWidth={minWidth}>
-      <TableElement minWidth={minWidth} {...getTableProps()}>
+      <TableElement minWidth={minWidth} {...getTableProps()} title="table">
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>

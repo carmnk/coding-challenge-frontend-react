@@ -71,7 +71,7 @@ function App() {
     };
 
     (async () => {
-      const targets = await fetchTargets(); 
+      const targets = await fetchTargets();
       if (!targets) return;
       setTargets(targets);
     })();
@@ -112,17 +112,14 @@ function App() {
     ?.reverse();
   const monthlyTarget = Targets?.[Month.month];
   const progress = !monthlyTarget?.target ? 0 : monthlySum / monthlyTarget?.target;
-
   return (
     <ThemeProvider theme={defaultDarkTheme}>
       <HorizontalViewportContainer title="h-viewport-container">
         <LayoutBubbles />
         <div style={{ paddingBottom: 35 }}>
           <HeaderMenu Month={Month} setMonth={setMonth} update={Data.update} />
-          <SalesIndicator>{numberWithCommas(monthlySum)} €</SalesIndicator>
-
+          <SalesIndicator title="sales-indicator">{numberWithCommas(monthlySum)} €</SalesIndicator>
           <ProgressBar progress={progress} target={monthlyTarget?.target ?? 0} />
-
           <FlexBoxContainer>
             <Table minWidth={748} columns={columns} data={last5Sales}></Table>
             <FlexGrid minWidth={963} data={salesPerProduct} totalSales={monthlySum}></FlexGrid>

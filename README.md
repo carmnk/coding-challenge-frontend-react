@@ -1,5 +1,41 @@
 # AM Coding Challenge - Frontend (React)
+//////////////////////////////////
 
+## implementation log
+
+see live demo: 
+https://carmnk.github.io/coding-challenge-frontend-react/
+
+(remark: there are no sales yet in the spreadsheet this month - march 2022, go 1 month back to see data)
+
+1) approach: 
+  - simple project setup with create-react-app
+  - not too much dependencies but also don't start from scratch. 
+  -> therefore no component library used (which makes it probably simpler but took a little more time)
+  - responsive interpretation of the figma layout 
+  - demonstrated both table and flex-grid for tabular data
+2) layout 
+  - responsive layout on mobile devices fits on device, looks appealing but responsive typography could be improved 
+  - just added responsive typography (breakpoint-based) for month's TOTAL to fit on small devices
+  - if device is too small tables wrap first and become scrollable on mobile devices  
+3) api (gsheets)
+  - simple fetching 
+  - use your own api-key -> to be inserted in /src/api/credentials.json
+4) testing
+  - quick and simple test suite -> due to timing I made it very simple, e.g. getting elements by title (which I would usually avoid but does the job)
+  - data fetching, timer mocked 
+  - test suite mock data is static (last data in 03/2022). 
+    -> next step would be agnostic test data, or mock current date 
+5) optional features: 
+  - table (orders) can be filtered alphanumerical (remark: is adequate for DD.MM.YYYY dateformat within 1 month)
+
+
+Installation/Usage: 
+- Clone 
+- npm start 
+the app is based on **create-react-app**
+
+//////////////////////////////////
 ## The case study: Product Order Dashboard
 
 ![AM Order Dashboard Challenge](https://github.com/AM-code-treasure/coding-challenge-frontend-react/blob/main/Order-Dashboard-v2.png)

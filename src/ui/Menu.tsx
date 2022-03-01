@@ -143,21 +143,22 @@ export const HeaderMenu = (props: HeaderMenuProps) => {
       <TitleRowFlex>
         <TextTitle>Order Dashboard</TextTitle>
         <TextRefreshCaption>
-          Refresh in<TextRefreshSecs>{Math.max(60 - lastUpdateDelayed, 0)}</TextRefreshSecs>
+          Refresh in
+          <TextRefreshSecs title={"current-refreshtime"}>{Math.max(60 - Math.round(lastUpdateDelayed), 0)}</TextRefreshSecs>
         </TextRefreshCaption>
       </TitleRowFlex>
       <MonthRowFlex>
         <MonthCurrentFlex>
-          <div style={{ alignSelf: "center" }}>
-            {MONTH_NAMES?.[Month.month]} {Month.year}
+          <div style={{ alignSelf: "center" }} title="current-month">
+            {`${MONTH_NAMES?.[Month.month]} ${Month.year}`}
           </div>
         </MonthCurrentFlex>
 
         <ActionButtonFlex>
-          <Button onClick={goLastMonth}>
+          <Button onClick={goLastMonth} title="button-last">
             <Icon path={mdiChevronLeft} size={"31px"} color={theme.color}></Icon>
           </Button>
-          <Button onClick={goNextMonth}>
+          <Button onClick={goNextMonth} title="button-next">
             <Icon path={mdiChevronRight} size={"31px"} color={theme.color}></Icon>
           </Button>
         </ActionButtonFlex>
